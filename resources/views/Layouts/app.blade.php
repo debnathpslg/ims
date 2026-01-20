@@ -42,6 +42,30 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
+                                    @if(session('success'))
+                                        <div class="alert alert-success alert-dismissible fade show">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
+
+                                    @if(session('error'))
+                                        <div class="alert alert-danger alert-dismissible fade show">
+                                            {{ session('error') }}
+                                        </div>
+                                    @endif
+
+                                    @if(session('warning'))
+                                        <div class="alert alert-warning alert-dismissible fade show">
+                                            {{ session('warning') }}
+                                        </div>
+                                    @endif
+
+                                    @if(session('info'))
+                                        <div class="alert alert-info alert-dismissible fade show">
+                                            {{ session('info') }}
+                                        </div>
+                                    @endif
+
                                     @yield('content')
                                 </div>
                             </div>
@@ -52,6 +76,9 @@
         </div>
 
         <script src="{{ asset('storage/assets/libs/jquery/dist/jquery.min.js') }}"></script>
+        <script src="{{ asset('storage/assets/extra-libs/taskboard/js/jquery.ui.touch-punch-improved.js') }}"></script>
+        <script src="{{ asset('storage/assets/extra-libs/taskboard/js/jquery-ui.min.js') }}"></script>
+
         <script src="{{ asset('storage/assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
         <script src="{{ asset('storage/assets/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('storage/dist/js/app.min.js') }}"></script>
@@ -62,5 +89,10 @@
         <script src="{{ asset('storage/dist/js/waves.js') }}"></script>
         <script src="{{ asset('storage/dist/js/sidebarmenu.js') }}"></script>
         <script src="{{ asset('storage/dist/js/custom.min.js') }}"></script>
+        <script src="{{ asset('storage/assets/libs/moment/min/moment.min.js') }}"></script>
+        <script src="{{ asset('storage/assets/libs/fullcalendar/dist/fullcalendar.min.js') }}"></script>
+        <script src="{{ asset('storage/dist/js/pages/calendar/cal-init.js') }}"></script>
+        <script src="{{ asset('storage/assets/extra-libs/DataTables/datatables.min.js') }}"></script>
+        <script src="{{ asset('storage/dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
     </body>
 </html>

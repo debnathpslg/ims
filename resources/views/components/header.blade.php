@@ -64,7 +64,10 @@
             <ul class="navbar-nav float-right">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="m-l-5 font-medium d-none d-sm-inline-block">Jonathan Doe
+                        <span class="m-l-5 font-medium d-none d-sm-inline-block">
+                            @auth
+                                {{ auth()->user()->name }}
+                            @endauth
                             <i class="mdi mdi-chevron-down"></i></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY" >
@@ -75,13 +78,27 @@
                             <div class="">
                             </div>
                             <div class="m-l-10">
-                                <h4 class="m-b-0">Jonathan Doe x</h4>
-                                <p class="m-b-0">jon@gmail.com</p>
+                                <h4 class="m-b-0 p-2">
+                                    @auth
+                                        {{ auth()->user()->name }}
+                                    @endauth
+                                </h4>
+                                <p class="m-b-0 p-2">
+                                    @auth
+                                        {{ auth()->user()->email }}
+                                    @endauth
+                                </p>
                             </div>
                         </div>
                         <div class="profile-dis scrollable">
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="fa fa-power-off m-r-5 m-l-5"></i>Logout</a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="dropdown-item">
+                                    <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </li>

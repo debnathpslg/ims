@@ -36,7 +36,7 @@
                         >
                             <li class="sidebar-item">
                                 <a
-                                    href="javascript:void(0)"
+                                    href="{{ route('employee.index') }}"
                                     class="sidebar-link"
                                 >
                                     <i class="mdi mdi-octagram"></i>
