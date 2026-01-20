@@ -52,7 +52,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon2"><i class="ti-pencil"></i></span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg" placeholder="Password" aria-label="Password" 
+                                    <input type="password" class="form-control" placeholder="Password" aria-label="Password" 
                                     aria-describedby="basic-addon1"
                                     name="password">
                                 </div>

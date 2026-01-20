@@ -95,7 +95,7 @@
                                 @csrf
                                 @method('DELETE')
 
-                                <button type="submit" class="dropdown-item">
+                                <button type="submit" class="dropdown-item btn-link">
                                     <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout
                                 </button>
                             </form>
