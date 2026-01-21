@@ -17,6 +17,8 @@
         <title>
             {{ config('app.name', 'Laravel') }}
         </title>
+        <link href="{{ asset('storage/assets/libs/fullcalendar/dist/fullcalendar.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('storage/assets/extra-libs/calendar/calendar.css') }}" rel="stylesheet" />
         <link href="{{ asset('storage/dist/css/style.min.css') }}" rel="stylesheet" />
     </head>
     <body>

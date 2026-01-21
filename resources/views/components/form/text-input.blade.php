@@ -11,7 +11,7 @@
             type="{{ $type }}"
             id="{{ $name }}"
             name="{{ $name }}"
-            value="{{ old($name) }}"
+            value="{{ old($name, $receivedData) }}"
             {{ $required ? 'required' : '' }}
             {{ $attributes->merge([
                 'class' => 'form-control ' 

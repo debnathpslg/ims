@@ -32,7 +32,7 @@
                         <td class="text-center">
                             <a href="{{ route('employee.show', $employee) }}">View</a>
                             <span> / </span>
-                            Edit
+                            <a href="{{ route('employee.edit', $employee) }}">Edit</a>
                         </td>
                     </tr>
                     @endforeach
@@ -40,7 +40,7 @@
                 <tfoot>
                     <tr>
                         <td colspan="7">
-                            <a type="button" class="btn btn-info btn-rounded" href="{{ route('employee.create') }}">Add New Contact</a>
+                            <a type="button" class="btn btn-info btn-rounded" href="{{ route('employee.create') }}">Add New Employee</a>
                         </td>
                     </tr>
                 </tfoot>

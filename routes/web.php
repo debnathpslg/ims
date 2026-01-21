@@ -19,6 +19,6 @@ Route::middleware('auth')->group(
         Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 
         Route::get("/", [DashboardController::class, 'index'])->name('home');
-        Route::resource('employee', EmployeeController::class)->only('index', 'create', 'store', 'show');
+        Route::resource('employee', EmployeeController::class)->except('destroy');
     }
 );

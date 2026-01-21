@@ -17,8 +17,9 @@ class SelectInput extends Component
         public string $name = '',
         public array $options = [],
         public bool $required = false,
-        public mixed $selected = null)
-    {
+        public mixed $selected = null,
+        public string $selectedData = ''
+    ) {
         //
     }
 

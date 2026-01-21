@@ -15,7 +15,7 @@
             @foreach($options as $key => $value)
                 <option
                     value="{{ $key }}"
-                    {{ old($name, $selected) == $key ? 'selected' : '' }}
+                    {{ old($name, $selectedData) == $key ? 'selected' : '' }}
                 >
                     {{ $value }}
                 </option>
