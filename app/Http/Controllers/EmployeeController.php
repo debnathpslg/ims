@@ -212,5 +212,6 @@ class EmployeeController extends Controller
     public function destroy(Employee $employee)
     {
         //
+        return redirect()->route('employee.index');
     }
 }
