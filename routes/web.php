@@ -20,5 +20,6 @@ Route::middleware('auth')->group(
 
         Route::get("/", [DashboardController::class, 'index'])->name('home');
         Route::resource('employee', EmployeeController::class)->except('destroy');
+        Route::resource('vendor', EmployeeController::class)->except('destroy');
     }
 );
