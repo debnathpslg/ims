@@ -31,12 +31,34 @@ class AuthController extends Controller
         return redirect()->intended('/');
     }
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         Auth::logout();
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
         return redirect()->route('home');
+    }
+
+    public function register(Request $request)
+    {
+        //
+        return view('auth.register');
+    }
+
+    public function validateRegister(Request $request)
+    {
+        //
+        $newUser = User::create($request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8|confirmed',
+        ]));
+
+
+        Auth::login($newUser);
+
+        return redirect()->route('home')->with('success', "Welcome to IMS.");
     }
 }
