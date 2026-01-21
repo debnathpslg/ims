@@ -20,12 +20,20 @@
                     @foreach ($employees as $employee)
                     <tr>
                         <td class="text-center">{{ $employee->employee_code }}</td>
-                        <td>{{ $employee->employee_name }}</td>
+                        <td>
+                            <a href="{{ route('employee.show', $employee) }}">
+                                {{ $employee->employee_name }}
+                            </a>
+                        </td>
                         <td>{{ $employee->employee_designation }}</td>
                         <td>{{ $employee->employee_email }}</td>
                         <td>{{ $employee->employee_mobile }}</td>
                         <td class="text-white {{ $employee->employee_status == 'Active' ? 'bg-success' : 'bg-danger' }} text-center">{{ $employee->employee_status }}</td>
-                        <td class="text-center">Edit / Delete</td>
+                        <td class="text-center">
+                            <a href="{{ route('employee.show', $employee) }}">View</a>
+                            <span> / </span>
+                            Edit
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

@@ -35,7 +35,18 @@ class EmployeeController extends Controller
             ],
         ];
 
-        $employees = Employee::all();
+        // $employees = Employee::all();
+
+        $employees = Employee::select(
+            'id',
+            'employee_code',
+            'employee_name',
+            'employee_designation',
+            'employee_email',
+            'employee_mobile',
+            'employee_status'
+        )
+            ->get();
 
         return view('Employee.index', compact('breadCrumbProps', 'employees'));
     }

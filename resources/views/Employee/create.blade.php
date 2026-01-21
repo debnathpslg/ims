@@ -25,109 +25,58 @@
                     <div class="form-body col-md-12">
                         <div class="card-body">
                             <div class="row p-t-20">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label" 
-                                            for="employee_code"><span class="text-danger">* </span> Employee Code</label>
-                                        <input type="text" 
-                                            id="employee_code" 
-                                            class="form-control text-uppercase @error('employee_code') is-invalid @enderror" 
-                                            name="employee_code" 
-                                            value="{{ old('employee_code') }}" 
-                                            autofocus
-                                            required />
-                                        <div class="invalid-feedback">
-                                            @error('employee_code')
-                                                {{ $message }}
-                                            @enderror
-                                        </div> 
-                                    </div>
-                                </div>
+                                <x-form.text-input 
+                                    colSpan='col-md-3'
+                                    type="text"
+                                    name="employee_code"
+                                    labelCaption="Employee Code"
+                                    extraClass="text-uppercase"
+                                    required
+                                />
 
-                                <div class="col-md-9">
-                                    <div class="form-group">
-                                        <label class="control-label" 
-                                            for="employee_name"><span class="text-danger">* </span> Employee Name</label>
-                                        <input type="text" 
-                                            id="employee_name" 
-                                            class="form-control text-capitalize @error('employee_name') is-invalid @enderror" 
-                                            name="employee_name" 
-                                            value="{{ old('employee_name') }}" 
-                                            required />
-                                        <div class="invalid-feedback">
-                                            @error('employee_name')
-                                                {{ $message }}
-                                            @enderror
-                                        </div> 
-                                    </div>
-                                </div>
+                                <x-form.text-input 
+                                    colSpan='col-md-9'
+                                    type="text"
+                                    name="employee_name"
+                                    labelCaption="Employee Name"
+                                    extraClass="text-capitalize"
+                                    required
+                                />
 
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <label class="control-label" 
-                                            for="employee_designation"><span class="text-danger">* </span> Designation</label>
-                                        <input type="text" 
-                                            id="employee_designation" 
-                                            class="form-control text-capitalize @error('employee_designation') is-invalid @enderror" 
-                                            name="employee_designation" 
-                                            value="{{ old('employee_designation') }}" 
-                                            required />
-                                        <div class="invalid-feedback">
-                                            @error('employee_designation')
-                                                {{ $message }}
-                                            @enderror
-                                        </div> 
-                                    </div>
-                                </div>
+                                <x-form.text-input 
+                                    colSpan='col-md-2'
+                                    type="text"
+                                    name="employee_designation"
+                                    labelCaption="Designation"
+                                    extraClass="text-capitalize"
+                                    required
+                                />
 
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label class="control-label" 
-                                            for="employee_email"><span class="text-danger">* </span> Email</label>
-                                        <input type="email" 
-                                            id="employee_email" 
-                                            class="form-control text-lowercase @error('employee_email') is-invalid @enderror" 
-                                            name="employee_email" 
-                                            value="{{ old('employee_email') }}" 
-                                            required />
-                                        <div class="invalid-feedback">
-                                            @error('employee_email')
-                                                {{ $message }}
-                                            @enderror
-                                        </div> 
-                                    </div>
-                                </div>
+                                <x-form.text-input 
+                                    colSpan='col-md-5'
+                                    type="email"
+                                    name="employee_email"
+                                    labelCaption="Email"
+                                    extraClass="text-lowercase"
+                                    required
+                                />
 
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label" 
-                                            for="employee_mobile"><span class="text-danger">* </span> Mobile</label>
-                                        <input type="number" 
-                                            id="employee_mobile" 
-                                            class="form-control @error('employee_mobile') is-invalid @enderror" 
-                                            name="employee_mobile" 
-                                            value="{{ old('employee_mobile') }}" 
-                                            required />
-                                        <div class="invalid-feedback">
-                                            @error('employee_mobile')
-                                                {{ $message }}
-                                            @enderror
-                                        </div> 
-                                    </div>
-                                </div>
+                                <x-form.text-input 
+                                    colSpan='col-md-3'
+                                    type="number"
+                                    name="employee_mobile"
+                                    labelCaption="Mobile"
+                                    extraClass=""
+                                    required
+                                />
 
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <label class="control-label" 
-                                            for="employee_status"><span class="text-danger">* </span> Status</label>
-                                        <select class="form-control" 
-                                            name="employee_status" 
-                                            id="employee_status">
-                                            <option value="Active" {{ old('status') == 'Active' ? "selected" : ''}}>Active</option>
-                                            <option value="Inactive" {{ old('status') == 'Inactive' ? "selected" : ''}}>Inactive</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                <x-form.select-input 
+                                    colSpan='col-md-2'
+                                    labelCaption="Status"
+                                    name="employee_status"
+                                    :options="\App\Enums\StatusEnum::options()"
+                                    required
+                                />
                             </div>
                         </div>
 
@@ -146,5 +95,4 @@
             </div>
         </div>
     </div>
-    
 @endsection
