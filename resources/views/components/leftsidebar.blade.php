@@ -17,7 +17,7 @@
                     href="javascript:void(0)"
                     aria-expanded="false"
                 >
-                    <i class="mdi mdi-notification-clear-all"></i>
+                    <i class="mdi mdi-sitemap"></i>
                     <span class="hide-menu">Inventory</span>
                 </a>
                 <ul aria-expanded="false" class="collapse first-level">
@@ -27,7 +27,7 @@
                             href="javascript:void(0)"
                             aria-expanded="false"
                         >
-                            <i class="mdi mdi-playlist-plus"></i>
+                            <i class="mdi mdi-svg"></i>
                             <span class="hide-menu">Master</span>
                         </a>
                         <ul
@@ -39,7 +39,7 @@
                                     href="{{ route('employee.index') }}"
                                     class="sidebar-link"
                                 >
-                                    <i class="mdi mdi-octagram"></i>
+                                    <i class="mdi mdi-account-box"></i>
                                     <span class="hide-menu"
                                         >Employee</span
                                     >
@@ -50,7 +50,7 @@
                                     href="{{ route('vendor.index') }}"
                                     class="sidebar-link"
                                 >
-                                    <i class="mdi mdi-octagram"></i>
+                                    <i class="mdi mdi-cart"></i>
                                     <span class="hide-menu"
                                         >Vendor</span
                                     >
@@ -58,10 +58,10 @@
                             </li>
                             <li class="sidebar-item">
                                 <a
-                                    href="javascript:void(0)"
+                                    href="{{ route('item.index') }}"
                                     class="sidebar-link"
                                 >
-                                    <i class="mdi mdi-octagram"></i>
+                                    <i class="mdi mdi-server"></i>
                                     <span class="hide-menu"
                                         >Item</span
                                     >
@@ -87,7 +87,7 @@
                                     href="javascript:void(0)"
                                     class="sidebar-link"
                                 >
-                                    <i class="mdi mdi-octagram"></i>
+                                    <i class="mdi mdi-book-variant"></i>
                                     <span class="hide-menu"
                                         >Invoice</span
                                     >
@@ -98,7 +98,7 @@
                                     href="javascript:void(0)"
                                     class="sidebar-link"
                                 >
-                                    <i class="mdi mdi-octagram"></i>
+                                    <i class="mdi mdi-account-plus"></i>
                                     <span class="hide-menu"
                                         >Issue</span
                                     >
@@ -109,7 +109,7 @@
                                     href="javascript:void(0)"
                                     class="sidebar-link"
                                 >
-                                    <i class="mdi mdi-octagram"></i>
+                                    <i class="mdi mdi-file-restore"></i>
                                     <span class="hide-menu"
                                         >Return to Store</span
                                     >
@@ -120,7 +120,7 @@
                                     href="javascript:void(0)"
                                     class="sidebar-link"
                                 >
-                                    <i class="mdi mdi-octagram"></i>
+                                    <i class="mdi mdi-store"></i>
                                     <span class="hide-menu"
                                         >Return to Vendor</span
                                     >
@@ -131,7 +131,7 @@
                                     href="javascript:void(0)"
                                     class="sidebar-link"
                                 >
-                                    <i class="mdi mdi-octagram"></i>
+                                    <i class="mdi mdi-delete-variant"></i>
                                     <span class="hide-menu"
                                         >Scrap</span
                                     >
@@ -145,7 +145,7 @@
                             href="javascript:void(0)"
                             aria-expanded="false"
                         >
-                            <i class="mdi mdi-playlist-plus"></i>
+                            <i class="mdi mdi-book-multiple"></i>
                             <span class="hide-menu">Report</span>
                         </a>
                         <ul

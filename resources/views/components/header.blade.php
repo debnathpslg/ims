@@ -8,7 +8,7 @@
 
             <div class="navbar-brand">
                 <a href="index.html" class="logo">
-                    <b class="logo-icon">
+                    {{-- <b class="logo-icon">
                         <img
                             src="{{ asset('storage/assets/images/logo-icon.png') }}"
                             alt="homepage"
@@ -19,6 +19,7 @@
                             alt="homepage"
                             class="light-logo"
                         />
+                        
                     </b>
 
                     <span class="logo-text">
@@ -32,7 +33,8 @@
                             class="light-logo"
                             alt="homepage"
                         />
-                    </span>
+                    </span> --}}
+                    <span class="text-white">AASTHA - IMS</span>
                 </a>
 
                 <a
