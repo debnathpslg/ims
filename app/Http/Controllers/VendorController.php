@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vendor;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class VendorController extends Controller
 {
@@ -117,6 +118,32 @@ class VendorController extends Controller
     public function show(Vendor $vendor)
     {
         //
+        $breadCrumbProps = [
+            'page_name' => "Vendor",
+            'bread_crumbs' => [
+                [
+                    'label' => 'Home',
+                    'url' => route('home'),
+                ],
+                [
+                    'label' => 'Inventory',
+                    // 'url' => route('home'),
+                ],
+                [
+                    'label' => 'Master',
+                    // 'url' => route('home'),
+                ],
+                [
+                    'label' => 'Vendor',
+                    'url' => route('vendor.index'),
+                ],
+                [
+                    'label' => 'Show Vendor Details',
+                ],
+            ],
+        ];
+
+        return view('Vendor.show', compact('vendor', 'breadCrumbProps'));
     }
 
     /**
@@ -125,6 +152,32 @@ class VendorController extends Controller
     public function edit(Vendor $vendor)
     {
         //
+        $breadCrumbProps = [
+            'page_name' => "Vendor",
+            'bread_crumbs' => [
+                [
+                    'label' => 'Home',
+                    'url' => route('home'),
+                ],
+                [
+                    'label' => 'Inventory',
+                    // 'url' => route('home'),
+                ],
+                [
+                    'label' => 'Master',
+                    // 'url' => route('home'),
+                ],
+                [
+                    'label' => 'Vendor',
+                    'url' => route('vendor.index'),
+                ],
+                [
+                    'label' => 'Edit Vendor Details',
+                ],
+            ],
+        ];
+
+        return view('Vendor.edit', compact('breadCrumbProps', 'vendor'));
     }
 
     /**
@@ -133,6 +186,33 @@ class VendorController extends Controller
     public function update(Request $request, Vendor $vendor)
     {
         //
+        $validated = $request->validate([
+            'vendor_code'        => [
+                'required',
+                'string',
+                'max:10',
+                Rule::unique('vendors', 'vendor_code')->ignore($vendor->id),
+            ],
+            'vendor_name'        => 'required|string|max:100',
+            'vendor_address'     => 'nullable|string',
+            'vendor_city'        => 'required|string|max:30',
+            'vendor_state'       => 'required|string|max:30',
+            'vendor_pin'         => 'nullable|string|max:6',
+            'vendor_email'       => [
+                'required',
+                'max:50',
+                'email',
+                Rule::unique('vendors', 'vendor_email')->ignore($vendor->id),
+            ],
+            'vendor_mobile'      => 'nullable|max:20',
+            'vendor_gst_no'      => 'nullable|string|max:20',
+            'vendor_status'      => 'required|in:Active,Inactive',
+        ]);
+
+        $vendor->update($validated);
+
+        return redirect()->route('vendor.index')
+            ->with('success', 'Vendor updated successfully.');
     }
 
     /**
@@ -141,5 +221,6 @@ class VendorController extends Controller
     public function destroy(Vendor $vendor)
     {
         //
+        return redirect()->route('vendor.index')->with('error', 'This action is not permitted!!!');;
     }
 }

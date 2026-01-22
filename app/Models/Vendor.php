@@ -38,7 +38,7 @@ class Vendor extends Model
         'vendor_status',
     ];
 
-    protected function cendorCode(): Attribute
+    protected function vendorCode(): Attribute
     {
         return Attribute::make(
             set: fn($value) => $value ? strtoupper($value) : null
@@ -89,6 +89,6 @@ class Vendor extends Model
 
     public function isActive(): bool
     {
-        return $this->status === 'Active';
+        return $this->vendor_status === 'Active';
     }
 }

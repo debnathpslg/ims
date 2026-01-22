@@ -60,4 +60,9 @@ class Employee extends Model
             set: fn($value) => $value ? strtolower($value) : null
         );
     }
+
+    public function isActive(): bool
+    {
+        return $this->employee_status === 'Active';
+    }
 }

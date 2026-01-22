@@ -212,6 +212,6 @@ class EmployeeController extends Controller
     public function destroy(Employee $employee)
     {
         //
-        return redirect()->route('employee.index');
+        return redirect()->route('employee.index')->with('error', 'This action is not permitted!!!');
     }
 }

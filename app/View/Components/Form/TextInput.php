@@ -18,7 +18,7 @@ class TextInput extends Component
         public string $labelCaption = '',
         public string $extraClass = '',
         public bool $required = false,
-        public string $receivedData = ''
+        public ?string $receivedData = null
     ) {
         //
     }

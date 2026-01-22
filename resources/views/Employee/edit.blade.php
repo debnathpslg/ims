@@ -5,7 +5,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header bg-info">
-                    <h4 class="m-b-0 text-white">Employee Creation Form</h4>
+                    <h4 class="m-b-0 text-white">Employee Alteration Form</h4>
                 </div>
 
                 <form method="POST" action="{{ route('employee.update', $employee) }}" class="row g-3 m-2" novalidate>

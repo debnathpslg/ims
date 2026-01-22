@@ -5,15 +5,15 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header bg-info">
-                    <h4 class="m-b-0 text-white">Employee Creation Form</h4>
+                    <h4 class="m-b-0 text-white">Vendor Alteration Form</h4>
                 </div>
 
-                <form method="POST" action="{{ route('employee.update', $employee) }}" class="row g-3 m-2" novalidate>
+                <form method="POST" action="{{ route('vendor.update', $vendor) }}" class="row g-3 m-2" novalidate>
                     @csrf
                     @method('PUT')
 
                     <div class="card-body col-md-12">
-                        <h4 class="card-title">Employee Info</h4>
+                        <h4 class="card-title">Vendor Info</h4>
                         {{-- @if($errors->any())
                             <ul>
                                 @foreach($errors->all() as $error)
@@ -29,60 +29,100 @@
                                 <x-form.text-input 
                                     colSpan='col-md-3'
                                     type="text"
-                                    name="employee_code"
-                                    labelCaption="Employee Code"
+                                    name="vendor_code"
+                                    labelCaption="Vendor Code"
                                     extraClass="text-uppercase"
                                     required
-                                    :receivedData="$employee->employee_code"
+                                    :receivedData="$vendor->vendor_code"
                                 />
 
                                 <x-form.text-input 
                                     colSpan='col-md-9'
                                     type="text"
-                                    name="employee_name"
-                                    labelCaption="Employee Name"
+                                    name="vendor_name"
+                                    labelCaption="Vendor Name"
                                     extraClass="text-capitalize"
                                     required
-                                    :receivedData="$employee->employee_name"
+                                    :receivedData="$vendor->vendor_name"
                                 />
 
                                 <x-form.text-input 
-                                    colSpan='col-md-2'
+                                    colSpan='col-md-12'
                                     type="text"
-                                    name="employee_designation"
-                                    labelCaption="Designation"
+                                    name="vendor_address"
+                                    labelCaption="Address"
+                                    extraClass="text-capitalize"
+                                    {{-- required --}}
+                                    :receivedData="$vendor->vendor_address"
+                                />
+
+                                <x-form.text-input 
+                                    colSpan='col-md-4'
+                                    type="text"
+                                    name="vendor_city"
+                                    labelCaption="City"
                                     extraClass="text-capitalize"
                                     required
-                                    :receivedData="$employee->employee_designation"
+                                    :receivedData="$vendor->vendor_city"
+                                />
+
+                                <x-form.text-input 
+                                    colSpan='col-md-4'
+                                    type="text"
+                                    name="vendor_state"
+                                    labelCaption="State"
+                                    extraClass="text-capitalize"
+                                    required
+                                    :receivedData="$vendor->vendor_state"
+                                />
+
+                                <x-form.text-input 
+                                    colSpan='col-md-4'
+                                    type="number"
+                                    name="vendor_pin"
+                                    labelCaption="PIN"
+                                    {{-- extraClass="text-capitalize" --}}
+                                    {{-- required --}}
+                                    :receivedData="$vendor->vendor_pin"
                                 />
 
                                 <x-form.text-input 
                                     colSpan='col-md-5'
                                     type="email"
-                                    name="employee_email"
+                                    name="vendor_email"
                                     labelCaption="Email"
                                     extraClass="text-lowercase"
                                     required
-                                    :receivedData="$employee->employee_email"
+                                    :receivedData="$vendor->vendor_email"
+                                />
+
+                                <x-form.text-input 
+                                    colSpan='col-md-2'
+                                    type="number"
+                                    name="vendor_mobile"
+                                    labelCaption="Mobile"
+                                    {{-- extraClass="" --}}
+                                    {{-- required --}}
+                                    :receivedData="$vendor->vendor_mobile"
                                 />
 
                                 <x-form.text-input 
                                     colSpan='col-md-3'
-                                    type="number"
-                                    name="employee_mobile"
-                                    labelCaption="Mobile"
-                                    extraClass=""
-                                    required
-                                    :receivedData="$employee->employee_mobile"
+                                    type="text"
+                                    name="vendor_gst_no"
+                                    labelCaption="GST No"
+                                    {{-- extraClass="text-capitalize" --}}
+                                    {{-- required --}}
+                                    :receivedData="$vendor->vendor_gst_no"
                                 />
-
+                                
                                 <x-form.select-input 
                                     colSpan='col-md-2'
                                     labelCaption="Status"
-                                    name="employee_status"
+                                    name="vendor_status"
                                     :options="\App\Enums\StatusEnum::options()"
                                     required
-                                    :selectedData="$employee->employee_status"
+                                    :selectedData="$vendor->vendor_status"
                                 />
                             </div>
                         </div>
@@ -93,7 +133,7 @@
                                     <button type="submit" class="btn btn-info waves-effect waves-light">Save</button>
                                     <a type="submit" 
                                         class="btn btn-dark waves-effect waves-light"
-                                        href="{{ route('employee.index') }}">Cancel</a>
+                                        href="{{ route('vendor.index') }}">Cancel</a>
                                 </div>
                             </div>
                         </div>
