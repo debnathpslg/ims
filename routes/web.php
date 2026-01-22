@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\VendorController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\DashboardController;
 
 Route::middleware('guest')->group(
     function () {
@@ -20,6 +21,6 @@ Route::middleware('auth')->group(
 
         Route::get("/", [DashboardController::class, 'index'])->name('home');
         Route::resource('employee', EmployeeController::class)->except('destroy');
-        Route::resource('vendor', EmployeeController::class)->except('destroy');
+        Route::resource('vendor', VendorController::class)->except('destroy');
     }
 );
