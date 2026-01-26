@@ -84,7 +84,7 @@
                         >
                             <li class="sidebar-item">
                                 <a
-                                    href="javascript:void(0)"
+                                    href="{{ route('invoice.index') }}"
                                     class="sidebar-link"
                                 >
                                     <i class="mdi mdi-book-variant"></i>
@@ -154,7 +154,7 @@
                         >
                             <li class="sidebar-item">
                                 <a
-                                    href="javascript:void(0)"
+                                    href="{{ route('stock.index') }}"
                                     class="sidebar-link"
                                 >
                                     <i class="mdi mdi-octagram"></i>

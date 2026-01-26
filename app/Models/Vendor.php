@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-// use App\Models\Invoice;
+use App\Models\Invoice;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -90,5 +90,13 @@ class Vendor extends Model
     public function isActive(): bool
     {
         return $this->vendor_status === 'Active';
+    }
+
+    public function invoices(): HasMany
+    {
+        return $this->hasMany(
+            Invoice::class,
+            'vendor_id',
+        );
     }
 }

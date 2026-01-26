@@ -33,6 +33,10 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
+        if ($request->isMethod('get')) {
+            return redirect()->route('login');
+        } 
+        
         Auth::logout();
 
         $request->session()->invalidate();

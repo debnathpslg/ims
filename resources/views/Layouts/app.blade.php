@@ -96,5 +96,6 @@
         <script src="{{ asset('storage/dist/js/pages/calendar/cal-init.js') }}"></script>
         <script src="{{ asset('storage/assets/extra-libs/DataTables/datatables.min.js') }}"></script>
         <script src="{{ asset('storage/dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
+        @stack('scripts')
     </body>
 </html>

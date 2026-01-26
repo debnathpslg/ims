@@ -111,7 +111,7 @@
                                     type="text"
                                     name="vendor_gst_no"
                                     labelCaption="GST No"
-                                    {{-- extraClass="text-capitalize" --}}
+                                    extraClass="text-uppercase"
                                     {{-- required --}}
                                     :receivedData="$vendor->vendor_gst_no"
                                 />

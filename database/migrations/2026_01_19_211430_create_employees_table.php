@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->string('employee_code', 10)->unique();
-            $table->string('employee_name', 50)->index();
-            $table->string('employee_designation', 20)->index();
-            $table->string('employee_email', 50)->unique();
-            $table->string('employee_mobile', 20)->index();
-            $table->enum('employee_status', ['Active', 'Inactive'])->index()->default('Active');
+            $table->uuid('id')->primary()->comment('primary key');
+            $table->string('employee_code', 10)->unique()->comment('unique code for employee');
+            $table->string('employee_name', 50)->index()->comment('employee name');
+            $table->string('employee_designation', 20)->index()->comment('employee designation');
+            $table->string('employee_email', 50)->unique()->comment('employee email and it is unique');
+            $table->string('employee_mobile', 20)->index()->comment('employee mobile no, it should be uniquie but mobiles are swapped, hence it is kept as non unique');
+            $table->enum('employee_status', ['Active', 'Inactive'])->index()->default('Active')->comment('employee status - flags whether an employee is commissioned or not');
             $table->timestamps();
         });
     }

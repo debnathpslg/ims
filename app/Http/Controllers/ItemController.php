@@ -104,6 +104,12 @@ class ItemController extends Controller
             'item_status'           => 'required|in:Active,Inactive',
         ]);
 
+        // if ($request->item_status === 'Inactive' && ! $item->canBeInactivated()) {
+        //     return back()->withErrors([
+        //         'item_status' => 'Stock available. Item cannot be inactivated.',
+        //     ]);
+        // }
+
         Item::create($validated);
 
         return redirect()->route('item.index')
@@ -191,7 +197,7 @@ class ItemController extends Controller
                 'max:10',
                 Rule::unique('items', 'item_code')->ignore($item->id),
             ],
-            'item_code'             => [
+            'item_name'             => [
                 'required',
                 'string',
                 'max:100',
@@ -199,11 +205,17 @@ class ItemController extends Controller
             ],
             'item_type'             => 'required|in:Consumable,Asset',
             'item_has_serial_no'    => 'required|boolean',
-            'item_reorder_quantity' => 'nullable|string|max:20',
+            'item_reorder_quantity' => 'nullable|integer|min:1',
             'is_item_scrapable'     => 'required|boolean',
             'is_item_refundable'    => 'required|boolean',
             'item_status'           => 'required|in:Active,Inactive',
         ]);
+
+        if ($request->item_status === 'Inactive' && ! $item->canBeInactivated()) {
+            return back()->withErrors([
+                'item_status' => 'Stock available. Item cannot be inactivated.',
+            ]);
+        }
 
         $item->update($validated);
 
@@ -216,5 +228,6 @@ class ItemController extends Controller
      */ public function destroy(Item $item)
     {
         //
+        return redirect()->route('item.index');
     }
 }
