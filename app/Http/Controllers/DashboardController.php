@@ -23,6 +23,6 @@ class DashboardController extends Controller
             ],
         ];
 
-        return view('dashboard.index', compact('breadCrumbProps'));
+        return view('Dashboard.index', compact('breadCrumbProps'));
     }
 }
